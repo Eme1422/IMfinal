@@ -3,14 +3,14 @@ import streamlit as st
 st.title("🌌 Mi Universo de Lectura")
 st.markdown("Controla el estado de tu sesión de lectura actual y adapta el ambiente físico de la habitación de forma virtual.")
 
-# Simulación de estados del dispositivo (Hardware emulado en software)
+# Inicializar estados en la sesión de Streamlit
 if "session_active" not in st.session_state:
     st.session_state.session_active = False
 
 if "current_env" not in st.session_state:
     st.session_state.current_env = "Neutral"
 
-col1, col2 = st.columns([1, 1])
+col1, col2 = st.columns(2)
 
 with col1:
     st.subheader("🕹️ Control de Sesión")
@@ -26,17 +26,17 @@ with col1:
             st.rerun()
 
 with col2:
-    st.subheader("📊 Estado del Dispositivo")
+    st.subheader("📊 Estado del Dispositivo Emulado")
     if st.session_state.session_active:
         st.markdown("🟢 **Estado:** Lectura Activa")
-        st.metric(label="Tiempo estimado de sesión", value="15 min")
+        st.metric(label="Tiempo en sesión", value="En curso...")
     else:
         st.markdown("🔴 **Estado:** En Pausa / Reposo")
-        st.metric(label="Tiempo estimado de sesión", value="0 min")
+        st.metric(label="Tiempo en sesión", value="0 min")
 
 st.divider()
 
-st.subheader("🎨 Selección de Ambiente Físico (Simulación de Luces)")
+st.subheader("🎨 Selección de Ambiente Físico (Simulación de Luces y Sonido)")
 env_option = st.radio(
     "Elige la atmósfera para acompañar tu lectura:",
     ["Neutral", "☕ Café Literario", "🌧️ Lluvia Nocturna", "🌲 Bosque Profundo"],
@@ -47,12 +47,12 @@ if env_option != st.session_state.current_env:
     st.session_state.current_env = env_option
     st.toast(f"Ambiente cambiado a: {env_option}", icon="✨")
 
-# Feedback visual según el ambiente elegido
+# Feedback visual interactivo según el ambiente elegido
 if st.session_state.current_env == "☕ Café Literario":
-    st.info("💡 Luz cálida ambiental y tonos ámbar simulados.")
+    st.info("💡 Luz cálida ambiental simulada y tonos ámbar activos.")
 elif st.session_state.current_env == "🌧️ Lluvia Nocturna":
-    st.info("💧 Iluminación azulada tenue y sonido de fondo simulado.")
+    st.info("💧 Iluminación azulada tenue y atmósfera de lluvia simulada.")
 elif st.session_state.current_env == "🌲 Bosque Profundo":
-    st.info("🌿 Tonos verdes suaves y atmósfera de concentración.")
+    st.info("🌿 Tonos verdes suaves y atmósfera de concentración profunda.")
 else:
-    st.info("⚪ Iluminación estándar de lectura.")
+    st.info("⚪ Iluminación estándar de lectura activa.")
