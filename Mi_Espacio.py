@@ -19,7 +19,10 @@ with tab1:
 
 with tab2:
     st.subheader("Tu Huella de Lectura")
-    st.metric(label="Libros leídos este mes", value="3")
-    st.metric(label="Páginas totales recorridas", value="482")
+    col_a, col_b = st.columns(2)
+    with col_a:
+        st.metric(label="Libros leídos este mes", value="3")
+    with col_b:
+        st.metric(label="Páginas totales recorridas", value="482")
     
     st.progress(65, text="Meta de lectura anual (65% completado)")
