@@ -8,19 +8,19 @@ st.set_page_config(
 
 st.title("📚 MARGEN: Tu Compañero Inteligente de Lectura")
 st.markdown("""
-Bienvenido a **MARGEN**, un sistema interactivo diseñado para enriquecer tus sesiones de lectura, 
-fusionando el control ambiental, el seguimiento de hábitos literarios y la gestión de notas personales.
+Bienvenido a **MARGEN**, un sistema interactivo diseñado para enriquecer tus experiencias literarias, 
+fusionando el control ambiental simulado, el seguimiento de hábitos de lectura y la gestión de notas personales.
 """)
 
-st.info("👈 Utiliza el menú lateral izquierdo para navegar entre los diferentes ambientes y herramientas de la aplicación.")
+st.info("👈 Utiliza el menú lateral izquierdo para navegar entre las diferentes páginas y herramientas de la aplicación.")
 
 st.subheader("💡 ¿Qué encontrarás en esta aplicación?")
 col1, col2 = st.columns(2)
 
 with col1:
     st.markdown("### 🌌 Mi Universo de Lectura")
-    st.write("Controla tus sesiones activas, simula el cambio de ambientación lumínica/sonora y realiza un seguimiento visual de tus métricas de lectura.")
+    st.write("Gestiona tus sesiones de lectura y simula ambientes lumínicos y sonoros para acompañar tu concentración.")
 
 with col2:
     st.markdown("### 🛋️ Mi Espacio de Lectura")
-    st.write("Un entorno enfocado en la reflexión personal, el registro de fragmentos destacados y la construcción de memoria de tus libros.")
+    st.write("Registra tus reflexiones, anota fragmentos importantes y evalúa tus métricas e historial de lectura.")
